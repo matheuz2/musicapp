@@ -1,0 +1,263 @@
+{%load static%}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="./Logo-Wolf-Métodos.png">
+    <script src="https://kit.fontawesome.com/021532d534.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Cupom da Vez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rakkas&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <script>
+ function formatar(mascara, documento) {
+    let i = documento.value.length;
+    let saida = '#';
+    let texto = mascara.substring(i);
+    while (texto.substring(0, 1) != saida && texto.length ) {
+      documento.value += texto.substring(0, 1);
+      i++;
+      texto = mascara.substring(i);
+    }
+  }
+
+  var contagem = 0;
+  $(document).ready(function() {
+    generateCupom();
+    // $('.btn').click(function() {
+    //     generateCupom();
+    //     $('.pop').addClass('d-none')
+    // })
+
+        
+$('input').on('input', function() {
+
+
+            if($('#cupom').val().length > 7) {
+                console.log('sd', $('#cupom').val())
+                var val = $('#cupom').val();
+                var img = $('.imagem').attr('class');
+                console.log(img)
+
+                switch (true) {
+                    case img.includes('image_10'):
+        if (val == '72 56 76 23' || val == '72567623') {
+            executeActions();
+        }
+        break;
+    case img.includes('image_11'):
+        if (val == '45 98 74 16' || val == '45987416') {
+            executeActions();
+        }
+        break;
+    case img.includes('image_12'):
+        if (val == '96 71 49 54' || val == '96714954') {
+            executeActions();
+        }
+        break;
+    case img.includes('image_13'):
+        if (val == '54 49 78 32' || val == '54497832') {
+            executeActions();
+        }
+        break;
+    case img.includes('image_1'):
+        if (val == '45 46 44 71' || val == '45464471') {
+            executeActions();
+        }
+        break;
+    case img.includes('image_2'):
+        if (val == '31 87 81 37' || val == '31878137') {
+            executeActions();
+        }
+        break;
+    case img.includes('image_3'):
+        if (val == '35 75 21 56' || val == '35752156') {
+            executeActions();
+        }
+        break;
+    case img.includes('image_4'):
+        if (val == '27 84 73 65' || val == '27847365') {
+            executeActions();
+        }
+        break;
+    case img.includes('image_5'):
+        if (val == '95 79 29 96' || val == '95792996') {
+            executeActions();
+        }
+        break;
+    case img.includes('image_6'):
+        if (val == '31 96 81 78' || val == '31968178') {
+            executeActions();
+        }
+        break;
+    case img.includes('image_7'):
+        if (val == '83 49 55 13' || val == '83495513') {
+            executeActions();
+        }
+        break;
+    case img.includes('image_8'):
+        if (val == '65 55 91 85' || val == '65559185') {
+            executeActions();
+        }
+        break;
+    case img.includes('image_9'):
+        if (val == '55 93 88 74' || val == '55938874') {
+            executeActions();
+        }
+        break;
+    default:
+        break;
+}
+
+function executeActions() {
+    $('#cupom').addClass('ok');
+    if (contagem == 0) {
+        changeBalance(0, 97.98, 1500);
+    } else if (contagem == 1) {
+        changeBalance(97.98, 195.96, 1500);
+    }  else if (contagem == 2) {
+        changeBalance(195.96, 293.94, 1500);
+    }  else if (contagem == 3) {
+        changeBalance(293.94, 391.92, 1500);
+    }  else if (contagem == 4) {
+        changeBalance(391.92, 489.90, 1500);
+    }  else if (contagem == 5) {
+        changeBalance(489.90, 587.88, 1500);
+        setTimeout(() => {
+            window.location.href='./outra.html';
+        }, 2500);
+    }
+
+    setTimeout(() => {
+        $('#cupom').val('');
+        $('.cupomWrapper').addClass('d-none');
+        $('#cupom').removeClass('ok');
+        contagem = contagem + 1;
+        generateCupom();
+    }, 2500);
+}
+
+            
+            } 
+        
+    });
+})
+    function generateCupom() {
+        console.log('hdaush')
+        $('.loading').html('CARREGANDO NOVO CUPOM');
+
+        const images = [
+        {% for i in "12345678910111213"|make_list %}
+        "{% static 'img/'|add:i|add:'.png' %}"{% if not forloop.last %},{% endif %}
+        {% endfor %}
+    ];        const shuffledImages = shuffleArray(images); // Embaralhe as URLs das imagens
+
+let index = 0;
+var id = '';
+const intervalId = setInterval(() => {
+    $('#imagem').attr('src', shuffledImages[index]);
+    var currentImage = shuffledImages[index];
+
+    index = (index + 1) % shuffledImages.length;
+    var id = currentImage.match(/\d+/)[0]; // Extrair o número do arquivo PNG
+    $('#imagem').attr('class', `imagem image_${id}`);
+
+}, 350);
+
+        setTimeout(() => {
+            clearInterval(intervalId);
+
+            $('.loading').html('<div style="display: flex; justify-content: center; align-items: center; gap: 3px"><img style="width: 20px" src="{%static 'ok.png' %}">NOVO CUPOM LOCALIZADO!</div>');
+            $('.cupomWrapper').removeClass('d-none')
+        }, 5000);
+
+
+// Função para embaralhar um array
+function shuffleArray(array) {
+    const shuffledArray = [...array];
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    }
+    return shuffledArray;
+}
+
+function changeBalance(start, end, duration) {
+    $('#meuAudio')[0].play();
+
+    const increment = 1;
+    const steps = Math.ceil(duration / increment);
+    const stepAmount = (end - start) / steps;
+
+    let current = start;
+
+    const intervalId = setInterval(() => {
+        current += stepAmount;
+        $('.money').text(current.toFixed(2)); // Atualizar o texto do saldo
+        if (current >= end) {
+            clearInterval(intervalId);
+            $('.money').text(end.toFixed(2)); // Garantir que o saldo final seja exibido corretamente
+        }
+    }, increment);
+}
+
+    </script>
+</head>
+<body class="quiz">
+    <div class="pop d-none">
+        <div class="pop-out-foto">
+            <div class="pop-header">
+                <h1>Seja bem-vindo!</h1>
+            </div>
+            <p>Você acaba de ganhar uma <b>licença gratuita</b> para digitar cupons em nosso app!</p>
+            <h3>Aproveite, você já ganhou R$ 50</h3>
+            <p>Digite <b>3 cupons</b> e realize o seu primeiro saque!</p>
+            <button class="btn">Começar</button>
+        </div> 
+      </div>
+    <audio id="meuAudio" src="./cash.mp3"></audio>
+    <header>
+        <img  src="{%static 'img/logo.png' %}" alt="">
+        <div class="saldo">
+            SALDO
+            <div>
+                R$ <span class="money">0.00</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h3 class="loading">CARREGANDO NOVO CUPOM</h3>
+        <img id="imagem" src="{%static 'img/1.png'%}" alt="">
+
+
+    <div class="d-none cupomWrapper">
+        <label for="cupom">CUPOM</label>
+        <input type="tel" id="cupom" maxlength="15" placeholder="Digite os 8 digitos do CUPOM" OnKeyPress="formatar('## ## ## ##',this)">
+    </div>
+
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
